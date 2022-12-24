@@ -1,0 +1,10 @@
+# include source codes for debug
+# /src
+
+# config files
+/.eslintrc.cjs
+/rollup.config.js
+/tsconfig.json
+
+# editor files
+/.vscode
