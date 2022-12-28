@@ -7,12 +7,18 @@
     box-shadow: inset 0 0 4px #5e5e5e;
     border-radius: 1000px;
     cursor: pointer;
+    &.Outline {
+        outline: inset 2px black;
+    }
     &.Checked {
         background-color: #21e1a1;
         box-shadow: inset 0 0 4px #fff;
     }
     input {
-        display: none;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        position: absolute;
     }
     .Slider {
         background-color: #fff;

@@ -1,4 +1,4 @@
-import {ChangeEventHandler, CSSProperties, FC, memo, useCallback, useMemo, useState} from 'react';
+import {ChangeEventHandler, CSSProperties, EventHandler, FC, FocusEventHandler, KeyboardEventHandler, memo, SyntheticEvent, useCallback, useMemo, useState} from 'react';
 import Style from './asset/style.module.scss';
 import { getPx, getClassName } from './util';
 
@@ -14,6 +14,8 @@ type SwitchProps = {
  */
 const Switch: FC<SwitchProps> = memo(({defaultValue = false, onChange, width = 60, height = 26}) => {
   const [isChecked, setIsChecked] = useState(defaultValue);
+  const [isFocused, setIsFocused] = useState(false);
+  const [isKeyboard, setIsKeyboard] = useState(true);
 
   const sliderSize = useMemo(() => {
     const containerSize = Math.min(width, height);
@@ -29,8 +31,8 @@ const Switch: FC<SwitchProps> = memo(({defaultValue = false, onChange, width = 6
   }, [width, height, isChecked, sliderSize]);
 
   const containerClassName = useMemo(() =>
-    getClassName(Style.Container, {[Style.Checked]: isChecked}),
-  [isChecked]);
+    getClassName(Style.Container, {[Style.Checked]: isChecked, [Style.Outline]: isFocused && isKeyboard}),
+  [isChecked, isFocused, isKeyboard]);
   const sliderClassName = useMemo(() =>
     getClassName(Style.Slider,  {[Style.Checked]: isChecked}),
   [isChecked]);
@@ -41,8 +43,15 @@ const Switch: FC<SwitchProps> = memo(({defaultValue = false, onChange, width = 6
     onChange?.(checked);
   }, [onChange]);
 
-  return <label className={containerClassName} style={containerStyle}>
-    <input type='checkbox' checked={isChecked} onChange={onChangeCallback} />
+  const onFocus = useCallback<FocusEventHandler<HTMLInputElement>>(() => setIsFocused(true), []);
+  const onFocusOut = useCallback(() => setIsFocused(false), []);
+  const onMouseUp = useCallback(() => setIsKeyboard(false), []);
+  const onKeyboardUp = useCallback(() => setIsKeyboard(true), []);
+
+  return <label className={containerClassName} style={containerStyle} onMouseUp={onMouseUp}>
+    <input type='checkbox' checked={isChecked}
+      onChange={onChangeCallback} onFocus={onFocus} onBlur={onFocusOut} onKeyUp={onKeyboardUp}
+    />
     <div className={sliderClassName} style={sliderStyle}></div>
   </label>;
 });
