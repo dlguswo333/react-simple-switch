@@ -3,10 +3,15 @@ import Style from './asset/style.module.scss';
 import { getPx, getClassName } from './util';
 
 type SwitchProps = {
+  /** Default boolean value of switch. */
   defaultValue: boolean,
+  /** Callback function on change event. */
   onChange?: (value: boolean)=> unknown,
+  /** Width of switch in pixel. */
   width?: number,
+  /** Height of switch in pixel. */
   height?: number,
+  /** Disabled property of switch */
   disabled?: boolean,
 }
 
@@ -26,7 +31,7 @@ const Switch: FC<SwitchProps> = memo(({
 
   const sliderSize = useMemo(() => {
     const containerSize = Math.min(width, height);
-    return Math.min(containerSize - 8, Math.floor(containerSize * 0.9));
+    return Math.min(containerSize - 8, Math.floor(containerSize * 0.87));
   }, [height, width]);
 
   const containerStyle = useMemo<CSSProperties>(() => {
