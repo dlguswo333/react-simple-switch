@@ -11,7 +11,7 @@ type SwitchProps = {
   width?: number,
   /** Height of switch in pixel. */
   height?: number,
-  /** Disabled property of switch */
+  /** Disabled property of switch. */
   disabled?: boolean,
 }
 
