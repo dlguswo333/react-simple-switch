@@ -1,5 +1,5 @@
 {
-  "name": "react-simple-switch",
+  "name": "@dlguswo333/react-simple-switch",
   "version": "0.1.0",
   "description": "Simple, lightweight React switch",
   "main": "dist/index.umd.js",

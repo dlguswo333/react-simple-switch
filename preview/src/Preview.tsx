@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Switch from 'react-simple-switch';
+import Switch from '@dlguswo333/react-simple-switch';
 import Control from './Control';
 
 const DEFAULT_SWITCH_PROPS = {

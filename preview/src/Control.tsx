@@ -1,13 +1,13 @@
 import { FC, FormEventHandler, useCallback } from 'react';
-import Switch from 'react-simple-switch';
+import Switch from '@dlguswo333/react-simple-switch';
 
 type Props = {
   width: number;
   height: number;
   disabled: boolean;
-  setWidth: (num: number)=> void;
-  setHeight: (num: number)=> void;
-  setDisabled: (val: boolean)=> void;
+  setWidth: (num: number) => void;
+  setHeight: (num: number) => void;
+  setDisabled: (val: boolean) => void;
 }
 
 const Control: FC<Props> = ({width, height, disabled, setWidth, setHeight, setDisabled}) => {
