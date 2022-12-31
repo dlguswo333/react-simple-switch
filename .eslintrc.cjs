@@ -4,7 +4,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   root: true,
-  ignorePatterns: ['*.js', '*.cjs'],
+  ignorePatterns: ['*.js', '*.cjs', '*.d.ts'],
   rules: {
     'indent': ['error', 2],
     'quotes': ['error', 'single'],

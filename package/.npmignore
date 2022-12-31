@@ -1,6 +1,9 @@
 # include source codes for debug
 # /src
 
+# preview
+/preview
+
 # config files
 /.eslintrc.cjs
 /rollup.config.js

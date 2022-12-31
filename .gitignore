@@ -6,7 +6,7 @@
 node_modules
 
 # production
-/dist
+/package/dist
 /preview/dist
 
 # editor
