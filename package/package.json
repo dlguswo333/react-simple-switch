@@ -1,7 +1,7 @@
 {
   "name": "react-simple-switch",
   "version": "0.1.0",
-  "description": "",
+  "description": "Simple, lightweight React switch",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "type": "module",
@@ -13,7 +13,7 @@
     "lint": "eslint src",
     "prepack": "rm -rf dist/* && npm run build"
   },
-  "keywords": [],
+  "keywords": ["react", "simple", "lightweight", "switch", "toggle"],
   "author": "dlguswo333 <dlguswo002@gmail.com>",
   "license": "MIT",
   "devDependencies": {
