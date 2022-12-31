@@ -1,7 +1,7 @@
 # react-simple-switch
 react-simple-switch is a simple, lightweight react component you can toggle on and off.
 
-![react-simple-switches](docs/switches.png)
+![react-simple-switches](https://github.com/dlguswo333/react-simple-switch/blob/main/docs/switches.png?raw=true)
 
 ## Preview
 You can preview the component at github pages.
