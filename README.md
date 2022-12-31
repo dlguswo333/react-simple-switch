@@ -29,4 +29,15 @@ Theses are a few things that you need to note when you use the switch.
     Make sure you use React 17 or later.
 
 
+## Props (Properties)
+Property | Type | Default | Description
+:---:|:---:|:---:|:---
+`defaultValue` | `boolean` | **Required** | Default boolean value of switch.
+`onChange` | `(value: boolean) => unknown` | `undefined` | Callback function on change event. Return value has no effect.
+`width` | `number` | `60` | Width of switch in pixel.
+`height` | `number` | `26` | Height of switch in pixel.
+`disabled` | `boolean` | `false` | Disabled property of switch. `true` will mark the switch disabled and the value of the switch cannot be changed while it is set to `true`.
+
+
+
 [new JSX Transform]: https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html
