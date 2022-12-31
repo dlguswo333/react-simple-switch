@@ -23,7 +23,13 @@ module.exports = {
     'space-before-function-paren': ['error', 'always'],
     'space-before-blocks': ['error', 'always'],
     'arrow-spacing': 'error',
-    '@typescript-eslint/type-annotation-spacing': ['error', {before: false, after: true}],
+    '@typescript-eslint/type-annotation-spacing': ['error', {
+      before: false,
+      after: true,
+      overrides: {
+        arrow: {before: true, after: true}
+      }
+    }],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
   }

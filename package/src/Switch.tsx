@@ -6,7 +6,7 @@ type SwitchProps = {
   /** Default boolean value of switch. */
   defaultValue: boolean,
   /** Callback function on change event. */
-  onChange?: (value: boolean)=> unknown,
+  onChange?: (value: boolean) => unknown,
   /** Width of switch in pixel. */
   width?: number,
   /** Height of switch in pixel. */
@@ -15,15 +15,21 @@ type SwitchProps = {
   disabled?: boolean,
 }
 
+const DEFAULT_SWITCH_PROPS = ({
+  width: 60,
+  height: 26,
+  disabled: false
+} as const) satisfies Partial<SwitchProps>;
+
 /**
  * react-simple-switch.
  */
 const Switch: FC<SwitchProps> = memo(({
   defaultValue,
   onChange,
-  width = 60,
-  height = 26,
-  disabled = false
+  width = DEFAULT_SWITCH_PROPS.width,
+  height = DEFAULT_SWITCH_PROPS.height,
+  disabled = DEFAULT_SWITCH_PROPS.disabled
 }) => {
   const [isChecked, setIsChecked] = useState(defaultValue);
   const [isFocused, setIsFocused] = useState(false);
