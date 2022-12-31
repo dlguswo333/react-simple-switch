@@ -1,7 +1,7 @@
 {
   "name": "@dlguswo333/react-simple-switch-preview",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "module": "dist/index.js",
   "type": "module",
