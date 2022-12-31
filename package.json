@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build -w package",
+    "build": "npm run build -w package -w preview",
     "watch": "npm run watch -w package",
     "lint": "eslint .",
     "preview": "concurrently \"npm run watch\" \"npm start -w preview\""
