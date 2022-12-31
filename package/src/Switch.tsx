@@ -19,7 +19,7 @@ type SwitchProps = {
  * react-simple-switch.
  */
 const Switch: FC<SwitchProps> = memo(({
-  defaultValue = false,
+  defaultValue,
   onChange,
   width = 60,
   height = 26,
