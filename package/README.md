@@ -3,6 +3,11 @@ react-simple-switch is a simple, lightweight react component you can toggle on a
 
 ![react-simple-switches](https://github.com/dlguswo333/react-simple-switch/blob/main/docs/switches.png?raw=true)
 
+github repository link: https://github.com/dlguswo333/react-simple-switch
+
+npm link: https://www.npmjs.com/package/@dlguswo333/react-simple-switch
+
+
 ## Preview
 You can preview the component at github pages.
 
