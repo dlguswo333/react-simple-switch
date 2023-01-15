@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import Switch from '@dlguswo333/react-simple-switch';
 import Control from './Control';
 

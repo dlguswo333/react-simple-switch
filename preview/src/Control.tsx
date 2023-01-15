@@ -1,4 +1,4 @@
-import { FC, FormEventHandler, useCallback } from 'react';
+import {FC, FormEventHandler, useCallback} from 'react';
 import Switch from '@dlguswo333/react-simple-switch';
 
 type Props = {

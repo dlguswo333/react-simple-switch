@@ -1,6 +1,6 @@
 import {ChangeEventHandler, CSSProperties, FC, FocusEventHandler, memo, useCallback, useMemo, useState} from 'react';
 import Style from './asset/style.module.scss';
-import { getPx, getClassName } from './util';
+import {getPx, getClassName} from './util';
 
 type SwitchProps = {
   /** Default boolean value of switch. */

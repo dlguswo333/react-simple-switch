@@ -20,6 +20,7 @@ module.exports = {
       'exports': 'never',
       'functions': 'never'
     }],
+    'object-curly-spacing': 'error',
     'space-before-function-paren': ['error', 'always'],
     'space-before-blocks': ['error', 'always'],
     'arrow-spacing': 'error',
