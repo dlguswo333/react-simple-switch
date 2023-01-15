@@ -44,6 +44,11 @@ const Switch: FC<SwitchProps> = memo(({
     return {width: getPx(width), height: getPx(height)};
   }, [height, width]);
   const sliderStyle = useMemo<CSSProperties>(() => {
+    if (width < height) {
+      // Vertical switch.
+      const translateY = (height - width) / 2;
+      return {width: getPx(sliderSize), height: getPx(sliderSize), transform: `translateY(${isChecked ? -translateY : translateY}px)`};
+    }
     const translateX = (width - height) / 2;
     return {width: getPx(sliderSize), height: getPx(sliderSize), transform: `translateX(${isChecked ? translateX : -translateX}px)`};
   }, [width, height, isChecked, sliderSize]);
