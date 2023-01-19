@@ -20,6 +20,7 @@ The switch has the following features.
 - You can set its default value.
 - You can set its width and height in **pixel** unit.
 - You can set whether the switch needs to be disabled (unable to toggle the switch).
+- You can set background color of the switch.
 
 Also, in development manner, it has the following features.
 - Lightweight. Total unpacked size weighs about **15KB**.
@@ -42,6 +43,8 @@ Property | Type | Default | Description
 `width` | `number` | `60` | Width of switch in pixel.
 `height` | `number` | `26` | Height of switch in pixel.
 `disabled` | `boolean` | `false` | Disabled property of switch. `true` will mark the switch disabled and the value of the switch cannot be changed while it is set to `true`.
+`onBackgroundColor` | `React.CSSProperties['backgroundColor']` | `undefined` | Background color of switch in on state.
+`offBackgroundColor` | `React.CSSProperties['backgroundColor']` | `undefined` | Background color of switch in off state.
 
 
 
