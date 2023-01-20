@@ -13,6 +13,10 @@ type SwitchProps = {
   height?: number,
   /** Disabled property of switch. */
   disabled?: boolean,
+  /** Background color of switch in on state. */
+  onBackgroundColor?: CSSProperties['backgroundColor'],
+  /** Background color of switch in off state. */
+  offBackgroundColor?: CSSProperties['backgroundColor'],
 }
 
 const DEFAULT_SWITCH_PROPS = ({
@@ -29,7 +33,9 @@ const Switch: FC<SwitchProps> = memo(({
   onChange,
   width = DEFAULT_SWITCH_PROPS.width,
   height = DEFAULT_SWITCH_PROPS.height,
-  disabled = DEFAULT_SWITCH_PROPS.disabled
+  disabled = DEFAULT_SWITCH_PROPS.disabled,
+  onBackgroundColor,
+  offBackgroundColor,
 }) => {
   const [isChecked, setIsChecked] = useState(defaultValue);
   const [isFocused, setIsFocused] = useState(false);
@@ -41,8 +47,12 @@ const Switch: FC<SwitchProps> = memo(({
   }, [height, width]);
 
   const containerStyle = useMemo<CSSProperties>(() => {
-    return {width: getPx(width), height: getPx(height)};
-  }, [height, width]);
+    return {
+      width: getPx(width),
+      height: getPx(height),
+      backgroundColor: isChecked ? onBackgroundColor : offBackgroundColor
+    };
+  }, [height, width, isChecked, onBackgroundColor, offBackgroundColor]);
   const sliderStyle = useMemo<CSSProperties>(() => {
     if (width < height) {
       // Vertical switch.
