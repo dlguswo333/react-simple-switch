@@ -1,4 +1,4 @@
-import {ChangeEventHandler, CSSProperties, FC, FocusEventHandler, memo, useCallback, useMemo, useState} from 'react';
+import {ChangeEventHandler, CSSProperties, FC, FocusEventHandler, memo, useCallback, useMemo, useRef, useState} from 'react';
 import Style from './asset/style.module.scss';
 import {getPx, getClassName} from './util';
 
@@ -40,6 +40,7 @@ const Switch: FC<SwitchProps> = memo(({
   const [isChecked, setIsChecked] = useState(defaultValue);
   const [isFocused, setIsFocused] = useState(false);
   const [isKeyboard, setIsKeyboard] = useState(true);
+  const sliderRef = useRef<HTMLDivElement>(null);
 
   const sliderSize = useMemo(() => {
     const containerSize = Math.min(width, height);
@@ -75,6 +76,15 @@ const Switch: FC<SwitchProps> = memo(({
     const checked = e.target.checked;
     setIsChecked(checked);
     onChange?.(checked);
+    if (!sliderRef.current) {
+      return;
+    }
+    sliderRef.current.style.transition = '0.2s';
+    sliderRef.current.ontransitionend = () => {
+      if (sliderRef.current) {
+        sliderRef.current.style.transition = '';
+      }
+    };
   }, [onChange]);
 
   const onFocus = useCallback<FocusEventHandler<HTMLInputElement>>(() => setIsFocused(true), []);
@@ -86,7 +96,7 @@ const Switch: FC<SwitchProps> = memo(({
     <input type='checkbox' checked={isChecked} disabled={disabled}
       onChange={onChangeCallback} onFocus={onFocus} onBlur={onFocusOut} onKeyUp={onKeyboardUp}
     />
-    <div className={sliderClassName} style={sliderStyle}></div>
+    <div className={sliderClassName} style={sliderStyle} ref={sliderRef} />
   </label>;
 });
 Switch.displayName = 'Switch';
