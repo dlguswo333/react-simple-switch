@@ -33,16 +33,28 @@ const Control: FC<Props> = ({width, height, disabled, setWidth, setHeight, setDi
 
   return <section className='Control'>
     <div className='Panel'>
-      <label>width: {width}</label>
-      <input type='range' min={10} max={200} value={width} onInput={onWidthChange}></input>
+      <div>
+        <label>width: {width}</label>
+      </div>
+      <div>
+        <input type='range' min={10} max={200} value={width} onInput={onWidthChange}></input>
+      </div>
     </div>
     <div className='Panel'>
-      <label>height: {height}</label>
-      <input type='range' min={10} max={200} value={height} onInput={onHeightChange}></input>
+      <div>
+        <label>height: {height}</label>
+      </div>
+      <div>
+        <input type='range' min={10} max={200} value={height} onInput={onHeightChange}></input>
+      </div>
     </div>
     <div className='Panel'>
-      <label>disabled: {disabled}</label>
-      <div><Switch width={34} height={20} defaultValue={disabled} onChange={onDisabledChange} /></div>
+      <div>
+        <label>disabled: {disabled}</label>
+      </div>
+      <div>
+        <Switch width={34} height={20} defaultValue={disabled} onChange={onDisabledChange} />
+      </div>
     </div>
   </section>;
 };

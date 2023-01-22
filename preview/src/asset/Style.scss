@@ -20,6 +20,13 @@ $big-screen: 800px;
     .Preview {
         position: relative;
         padding: 10pt;
+        .Switch-Holder {
+            min-width: 220px;
+            min-height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         @media (max-width: $big-screen) {
             &:not(:last-child) {
                 margin-bottom: 40pt;
@@ -40,23 +47,15 @@ $big-screen: 800px;
         }
         .Panel {
             margin-top: 10pt;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
             @media (min-width: $big-screen) {
                 padding: 6pt;
             }
             &:not(:last-child) {
                 margin-bottom: 6pt;
             }
-            label {
-                flex: 1;
+            & > label {
                 white-space: nowrap;
                 word-break: keep-all;
-            }
-            input {
-                flex: 3;
             }
         }
     }

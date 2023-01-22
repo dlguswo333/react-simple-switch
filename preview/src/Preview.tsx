@@ -12,7 +12,9 @@ const Preview = () => {
   const [height, setHeight] = useState(DEFAULT_SWITCH_PROPS.HEIGHT);
   const [disabled, setDisabled] = useState(false);
   return <section className='Preview'>
-    <Switch width={width} height={height} defaultValue={false} disabled={disabled} />
+    <div className='Switch-Holder'>
+      <Switch width={width} height={height} defaultValue={false} disabled={disabled} />
+    </div>
     <Control width={width} setWidth={setWidth}
       height={height} setHeight={setHeight}
       disabled={disabled} setDisabled={setDisabled} />
