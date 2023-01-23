@@ -53,9 +53,11 @@ $big-screen: 800px;
             &:not(:last-child) {
                 margin-bottom: 6pt;
             }
-            & > label {
+            & > div > label {
                 white-space: nowrap;
                 word-break: keep-all;
+                font-family: monospace;
+                font-size: 11pt;
             }
         }
     }
