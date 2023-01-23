@@ -43,8 +43,8 @@ Property | Type | Default | Description
 `width` | `number` | `60` | Width of switch in pixel.
 `height` | `number` | `26` | Height of switch in pixel.
 `disabled` | `boolean` | `false` | Disabled property of switch. `true` will mark the switch disabled and the value of the switch cannot be changed while it is set to `true`.
-`onBackgroundColor` | `React.CSSProperties['backgroundColor']` | `undefined` | Background color of switch in on state.
-`offBackgroundColor` | `React.CSSProperties['backgroundColor']` | `undefined` | Background color of switch in off state.
+`onBackgroundColor` | `React.CSSProperties['backgroundColor']` | `undefined` | Background color of switch in on state. If `undefined`, use default color defined in package css.
+`offBackgroundColor` | `React.CSSProperties['backgroundColor']` | `undefined` | Background color of switch in off state. If `undefined`, use default color defined in package css.
 
 
 
