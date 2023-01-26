@@ -47,5 +47,20 @@ Property | Type | Default | Description
 `offBackgroundColor` | `React.CSSProperties['backgroundColor']` | `undefined` | Background color of switch in off state. If `undefined`, use default color defined in package css.
 
 
+## Version History
+### v0.2.0
+- Support vertical switch
+- Support custom background colors
+- Fix (remove) CSS transition effect on slider when editing width or height
+
+### v0.1.2
+- README update
+
+### v0.1.1
+- README update
+
+### v0.1.0
+- Initial version
+
 
 [new JSX Transform]: https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html
